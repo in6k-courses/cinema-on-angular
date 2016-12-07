@@ -1,7 +1,6 @@
 package interlink.controller;
 
 import interlink.model.Genre;
-import interlink.model.Movie;
 import interlink.service.GenreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +19,6 @@ public class GenreController {
     @RequestMapping(value = "/genre", method = RequestMethod.GET)
     @ResponseBody
     List<Genre> getAllGenre() {
-        return genreService.getAllComm();
+        return genreService.getAllGenres();
     }
 }

@@ -7,7 +7,7 @@ import { Movie } from './movie';
 
 @Injectable()
 export class MovieService {
-  private heroesUrl = '/api/film/';
+  private heroesUrl = '/api/movie/';
   private headers = new Headers({'Content-Type': 'application/json'});
   constructor(private http: Http) { }
 

@@ -1,13 +1,15 @@
 package interlink.model;
 
+import org.hibernate.annotations.SortComparator;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "genre")
 public class Genre {
     @Id
-    @Column(name = "id",nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id",nullable = false)
     Integer id;
 
     @Column(name = "name")

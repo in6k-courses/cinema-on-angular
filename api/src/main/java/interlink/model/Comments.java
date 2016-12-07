@@ -9,8 +9,8 @@ import javax.persistence.*;
 public class Comments {
 
     @Id
-    @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
     Integer id;
 
     @Column(name = "like")

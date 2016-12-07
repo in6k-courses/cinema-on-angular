@@ -12,8 +12,9 @@ import java.util.List;
 public class GenreService {
     @Autowired
     GenreDao genreDao;
-    public List<Genre> getAllComm(){
-        return genreDao.getAllGenre();
+    public List<Genre> getAllGenres(){
+        List<Genre> list = genreDao.getAllGenre();
+        return list;
     }
 
 }

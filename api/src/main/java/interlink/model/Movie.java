@@ -9,9 +9,10 @@ import java.util.List;
 @Entity
 @Table(name = "movie")
 public class Movie {
+
     @Id
-    @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
     Integer id;
 
     @Column(name = "name")
