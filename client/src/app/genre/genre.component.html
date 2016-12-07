@@ -1,0 +1,18 @@
+<h2>My Genres</h2>
+<ul class="heroes">
+  <li *ngFor="let genre of genres" (click)="onSelect(genre)"
+      [class.selected]="genre === selectedGenre">
+    <span class="badge">{{genre.id}}</span>
+    <span>{{genre.name}}</span>
+    <button class="delete"
+            (click)="delete(genre); $event.stopPropagation()">x</button>
+  </li>
+</ul>
+
+<div *ngIf="selectedGenre">
+  <h2>
+    {{selectedGenre.name | uppercase}} have rating {{selectedGenre.rating}}
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
+
