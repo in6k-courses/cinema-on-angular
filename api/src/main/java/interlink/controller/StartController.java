@@ -18,7 +18,7 @@ public class StartController {
     @Autowired
     MovieService movieService;
 
-    @RequestMapping(value = "/film", method = RequestMethod.GET)
+    @RequestMapping(value = "/movie", method = RequestMethod.GET)
     @ResponseBody
     List<Movie> home() {
         return movieService.getAllMovie();
