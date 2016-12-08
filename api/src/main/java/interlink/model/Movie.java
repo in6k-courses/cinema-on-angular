@@ -1,6 +1,8 @@
 package interlink.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.internal.NotNull;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -11,7 +13,9 @@ import java.util.List;
 public class Movie {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @NotNull
     @Column(name = "id", nullable = false)
     Integer id;
 
@@ -24,10 +28,6 @@ public class Movie {
     @Column(name = "duration")
     Integer duration;
 
-    @Column(name = "comm_id")
-    Integer comm_id;
-
-    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "movie")
     private List<Comments> comm = new ArrayList();
 
@@ -38,7 +38,6 @@ public class Movie {
         this.name = name;
         this.description = description;
         this.duration = duration;
-        this.comm_id = comm_id;
     }
 
     public Integer getId() {
@@ -71,14 +70,6 @@ public class Movie {
 
     public void setDuration(Integer duration) {
         this.duration = duration;
-    }
-
-    public Integer getComm_id() {
-        return comm_id;
-    }
-
-    public void setComm_id(Integer comm_id) {
-        this.comm_id = comm_id;
     }
 
     public List<Comments> getComm() {

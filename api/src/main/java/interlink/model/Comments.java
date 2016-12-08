@@ -1,6 +1,7 @@
 package interlink.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.internal.NotNull;
 
 import javax.persistence.*;
 
@@ -9,7 +10,9 @@ import javax.persistence.*;
 public class Comments {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @NotNull
     @Column(name = "id", nullable = false)
     Integer id;
 
@@ -27,8 +30,9 @@ public class Comments {
     public Comments() {
     }
 
-    public Comments(Integer like) {
+    public Comments(Integer like, Integer movie_id) {
         this.like = like;
+        this.movie_id = movie_id;
     }
 
     public Integer getId() {

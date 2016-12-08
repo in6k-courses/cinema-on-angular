@@ -19,6 +19,11 @@ public class CommentsDao {
     public List<Comments> getAllComm() {
         Criteria criteria = sessionFactory.getCurrentSession().
                 createCriteria(Comments.class);
-        return (List<Comments>) criteria.list();
+        List<Comments> commentses = (List<Comments>) criteria.list();
+        for (Comments comments:commentses){
+            comments.getLike();
+            comments.getMovie().getDescription();
+        }
+        return commentses;
     }
 }
