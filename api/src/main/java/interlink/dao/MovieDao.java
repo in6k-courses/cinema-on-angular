@@ -10,8 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Repository
 @Transactional
+@Repository
 public class MovieDao {
 
     @Autowired

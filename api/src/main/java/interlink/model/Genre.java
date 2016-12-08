@@ -1,8 +1,5 @@
 package interlink.model;
 
-import com.sun.istack.internal.NotNull;
-import org.hibernate.annotations.SortComparator;
-
 import javax.persistence.*;
 
 @Entity
@@ -12,7 +9,7 @@ public class Genre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
+
     @Column(name = "id", nullable = false)
     Integer id;
 
