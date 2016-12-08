@@ -1,8 +1,6 @@
 
-/client/node_modules/
 /api/.idea/
-/client/.idea/
-/api/api.iml
-/api/KinoPoisk.iml
-/api/pom.xml
 /api/target/
+/client/.idea/
+/client/e2e/
+/client/node_modules/

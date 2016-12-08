@@ -27,9 +27,7 @@ export class GenreComponent implements OnInit {
   }
 
   onSelect(genre: Genre): void {
+    alert(genre.id);
     this.selectedGenre = genre;
-  }
-  gotoDetail(){
-
   }
 }

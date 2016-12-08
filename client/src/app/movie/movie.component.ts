@@ -16,10 +16,10 @@ export class MovieComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private taskService: MovieService) { }
+    private movieService: MovieService) { }
 
   getMovies(): void {
-    this.taskService.getMovies().then(movies => this.movies = movies);
+    this.movieService.getMovies().then(movies => this.movies = movies);
   }
 
   ngOnInit(): void {

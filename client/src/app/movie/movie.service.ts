@@ -7,21 +7,21 @@ import { Movie } from './movie';
 
 @Injectable()
 export class MovieService {
-  private heroesUrl = '/api/movie/';
+  private moviesUrl = '/api/movie/';
   private headers = new Headers({'Content-Type': 'application/json'});
   constructor(private http: Http) { }
 
 
   getMovies(): Promise<Movie[]> {
-    return this.http.get(this.heroesUrl)
+    return this.http.get(this.moviesUrl)
       .toPromise()
       .then(response => response.json() as Movie[])
       .catch(this.handleError);
   }
 
-  getFilm(id: number): Promise<Movie> {
+  getMovie(id: number): Promise<Movie> {
     return this.getMovies()
-      .then(films => films.find(film => film.id === id));
+      .then(movies => movies.find(movies => movies.id === id));
   }
 
   private handleError(error: any): Promise<any> {
