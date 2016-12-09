@@ -18,7 +18,7 @@ public class DataBase {
 
     private String DB_PASSWORD="school24";
 
-    private String DB_URL="jdbc:mysql://localhost:3306/cinema?useSSL=false";
+    private String DB_URL="jdbc:mysql://db:3306/cinema?useSSL=false";
 
     private String DB_USERNAME="root";
 
@@ -28,7 +28,7 @@ public class DataBase {
 
     private String HIBERNATE_HBM2DDL_AUTO="update";
 
-    private String ENTITYMANAGER_PACKAGES_TO_SCAN= "interlink";
+    private String ENTITYMANAGER_PACKAGES_TO_SCAN= "interlink.model";
 
     @Bean
     public DataSource dataSource() {
