@@ -3,11 +3,13 @@ import {NgModule} from "@angular/core";
 
 import {GenreComponent} from "./genre/genre.component";
 import {MovieComponent} from "./movie/movie.component";
+import {CommComponent} from "./comm/comm.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/genre', pathMatch: 'full' },
   { path: 'movies',  component: MovieComponent },
   { path: 'genre',     component: GenreComponent },
+  { path: 'comm',     component: CommComponent },
 ];
 @NgModule({
   imports: [ RouterModule.forRoot(routes)],

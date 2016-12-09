@@ -10,12 +10,14 @@ import { HttpModule } from "@angular/http";
 import { MovieComponent } from './movie/movie.component';
 import {MovieService} from "./movie/movie.service";
 import {GenreService} from "./genre/genre.service";
+import { CommComponent } from './comm/comm.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GenreComponent,
-    MovieComponent
+    MovieComponent,
+    CommComponent
   ],
   imports: [
     BrowserModule,

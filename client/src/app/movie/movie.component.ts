@@ -29,4 +29,14 @@ export class MovieComponent implements OnInit {
   onSelect(movie: Movie): void {
     this.selectedMovie = movie;
   }
+
+  add(name: string,description:string,duration:number): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.movieService.create(name,description,duration)
+      .then(movie => {
+        this.movies.push(movie);
+        this.selectedMovie = null;
+      });
+  }
 }

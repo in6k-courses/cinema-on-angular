@@ -32,7 +32,7 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(String name, String description, Integer duration, Integer comm_id) {
+    public Movie(String name, String description, Integer duration) {
         this.name = name;
         this.description = description;
         this.duration = duration;

@@ -13,14 +13,20 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/home")
+@RequestMapping(value = "")
 public class CommentsController {
     @Autowired
     CommentsService commentsService;
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
     @ResponseBody
     List<Comments> home() {
+        return commentsService.getAllComm();
+    }
+
+    @RequestMapping(value = "/api/comm", method = RequestMethod.GET)
+    @ResponseBody
+    List<Comments> getAllComm() {
         return commentsService.getAllComm();
     }
 }
