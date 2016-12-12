@@ -11,6 +11,7 @@ import { MovieComponent } from './movie/movie.component';
 import {MovieService} from "./movie/movie.service";
 import {GenreService} from "./genre/genre.service";
 import { CommComponent } from './comm/comm.component';
+import {CommService} from "./comm/comm.service";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { CommComponent } from './comm/comm.component';
     AppRoutingModule,
     HttpModule
   ],
-  providers: [ GenreService,MovieService ],
+  providers: [ GenreService,MovieService,CommService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

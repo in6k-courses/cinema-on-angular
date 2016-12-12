@@ -1,9 +1,10 @@
+<h2>Top Comms</h2>
 <ul class="heroes">
-  <li *ngFor="let movie of movies" (click)="onSelect(comm)"
+  <li *ngFor="let comm of comms" (click)="onSelect(comm)"
       [class.selected]="comm === selectedComm">
-    <span class="badge">{{comm.id}}</span>
-    <span>{{comm.name}}</span>
-    <button class="delete"
-            (click)="delete(comm); $event.stopPropagation()">x</button>
+    <!--<span class="badge">{{comm.id}}</span>-->
+    <span>{{comm.like}}</span>
+    <!--<button class="delete"-->
+            <!--(click)="delete(comm); $event.stopPropagation()">x</button>-->
   </li>
 </ul>

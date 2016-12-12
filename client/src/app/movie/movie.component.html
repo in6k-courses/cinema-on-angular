@@ -6,9 +6,16 @@
     <span>{{movie.name}}</span>
     <button class="delete"
             (click)="delete(movie); $event.stopPropagation()">x</button>
+
   </li>
 </ul>
 <div>
+  <li *ngFor="let movie of movies" (click)="onSelect(movie)">
+    <span>{{movie.name}}</span>
+    <!--<li *ngFor="let comm of movie.comms">-->
+     <!--<span>{{comm.like}}</span>-->
+    <!--</li>-->
+  </li>
   <label>name:</label> <input #name/><br>
   <label>description:</label> <input #description/><br>
   <label>duration:</label> <input #duration/><br>
@@ -17,12 +24,9 @@
     Add
   </button>
 </div>
-<!--<div *ngIf="selectedMovie">-->
-  <!--<h2>-->
-    <!--{{selectedMovie.name | uppercase}} is my favorite movie-->
-    <!--<li *ngFor="let comm of comms">-->
-      <!--<span>{{movie.comm.like}}</span>-->
-    <!--</li>-->
-  <!--</h2>-->
-  <!--<button (click)="gotoDetail()">View Details</button>-->
-<!--</div>-->
+<div *ngIf="selectedMovie">
+  <h2>
+    {{selectedMovie.name | uppercase}} is my favorite movie
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

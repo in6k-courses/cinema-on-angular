@@ -4,12 +4,12 @@ import {Router} from "@angular/router";
 import {CommService} from "./comm.service";
 
 @Component({
-  selector: 'app-comm',
+  moduleId: module.id.toString(),
+  selector: 'my-comms',
   templateUrl: './comm.component.html',
   styleUrls: ['./comm.component.css']
 })
 export class CommComponent implements OnInit {
-
   comms: Comm[];
   selectedMovie: Comm;
 
@@ -18,7 +18,7 @@ export class CommComponent implements OnInit {
     private commService: CommService) { }
 
   getComms(): void {
-    this.commService.getComms().then(comms => this.comms = comms);
+    this.commService.getComms().then(comm => this.comms = comm);
   }
 
   ngOnInit(): void {

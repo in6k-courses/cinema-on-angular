@@ -19,7 +19,7 @@ export class GenreComponent implements OnInit {
     private genreService: GenreService) { }
 
   getGenres(): void {
-    this.genreService.getGenres().then(genres => this.genres = genres);
+    this.genreService.getGenres().then(genre => this.genres = genre);
   }
 
   ngOnInit(): void {
