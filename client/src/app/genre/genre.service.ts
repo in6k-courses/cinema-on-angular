@@ -7,7 +7,7 @@ import { Genre } from './genre';
 
 @Injectable()
 export class GenreService {
-  private genreUrl = '/api/genre/';
+  private genreUrl = '/api/genre';
   private headers = new Headers({'Content-Type': 'application/json'});
   constructor(private http: Http) { }
 

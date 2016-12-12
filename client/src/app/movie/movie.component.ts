@@ -39,4 +39,13 @@ export class MovieComponent implements OnInit {
         this.selectedMovie = null;
       });
   }
+
+  delete(movie: Movie): void {
+    this.movieService
+      .delete(movie.id)
+      .then(() => {
+        this.movies = this.movies.filter(h => h !== movie);
+        if (this.selectedMovie === movie) { this.selectedMovie = null; }
+      });
+  }
 }

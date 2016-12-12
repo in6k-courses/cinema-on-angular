@@ -36,4 +36,13 @@ export class MovieService {
       .then(movie => movie.json())
       .catch(this.handleError);
   }
+
+  delete(id: number): Promise<void> {
+    const url = `${this.moviesUrl}/${id}`;
+    return this.http
+      .delete(url, {headers: this.headers})
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError);
+  }
 }

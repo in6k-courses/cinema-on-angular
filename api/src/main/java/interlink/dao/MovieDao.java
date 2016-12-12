@@ -10,6 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+import static org.hibernate.criterion.Restrictions.eq;
+
 @Transactional
 @Repository
 public class MovieDao {
@@ -34,5 +36,12 @@ public class MovieDao {
         Movie movie= new Movie(name,description,duration);
         sessionFactory.getCurrentSession().save(movie);
         return movie;
+    }
+
+    public Movie deleteMovie(Integer id) {
+        Movie movie = (Movie) sessionFactory.getCurrentSession().createCriteria(Movie.class)
+            .add(eq("id", id)).uniqueResult();
+        sessionFactory.getCurrentSession().delete(movie);
+        return null;
     }
 }

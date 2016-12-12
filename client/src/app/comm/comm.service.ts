@@ -8,7 +8,7 @@ import {Comm} from "./comm";
 
 @Injectable()
 export class CommService {
-  private commUrl = '/api/comm/';
+  private commUrl = '/api/comm';
   private headers = new Headers({'Content-Type': 'application/json'});
   constructor(private http: Http) { }
 

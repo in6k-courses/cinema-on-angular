@@ -20,4 +20,9 @@ public class MovieService {
     public Movie addNewMovie(String name,String description,Integer duration) {
         return movieDao.addNewMovie(name,description,duration);
     }
+
+    public Movie deleteMovie(Integer id) {
+        movieDao.deleteMovie(id);
+        return null;
+    }
 }
