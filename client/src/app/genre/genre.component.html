@@ -2,6 +2,7 @@
 <ul class="heroes">
   <li *ngFor="let genre of genres" (click)="onSelect(genre)"
       [class.selected]="genre === selectedGenre">
+    <span class="badge">{{genre.id}}</span>
     <span>{{genre.name}}</span>
     <button class="delete"
             (click)="delete(genre); $event.stopPropagation()">x</button>

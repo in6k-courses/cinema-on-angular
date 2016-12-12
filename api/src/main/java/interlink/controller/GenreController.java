@@ -26,4 +26,9 @@ public class GenreController {
     Genre addNewMovie(@RequestBody Genre genre){
         return genreService.addNewGenre(genre.getName());
     }
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @ResponseBody
+    Genre deleteGenre(@PathVariable("id") Integer id){
+        return genreService.deleteGenre(id);
+    }
 }

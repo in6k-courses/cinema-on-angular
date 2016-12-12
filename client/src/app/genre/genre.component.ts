@@ -38,4 +38,12 @@ export class GenreComponent implements OnInit {
         this.selectedGenre = null;
       });
   }
+  delete(genre : Genre): void {
+    this.genreService
+      .delete(genre.id)
+      .then(() => {
+        this.genres = this.genres.filter(h => h !== genre);
+        if (this.selectedGenre === genre) { this.selectedGenre = null; }
+      });
+  }
 }

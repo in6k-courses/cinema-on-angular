@@ -36,4 +36,13 @@ export class GenreService {
       .then(genre => genre.json())
       .catch(this.handleError);
   }
+
+  delete(id: number) {
+    const url = `${this.genreUrl}/${id}`;
+    return this.http
+      .delete(url, {headers: this.headers})
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError);
+  }
 }

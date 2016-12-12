@@ -23,4 +23,8 @@ public class GenreService {
     public Genre addNewGenre(String name) {
         return genreDao.addNewGenre(name);
     }
+
+    public Genre deleteGenre(Integer id) {
+        return genreDao.deleteGenre(id);
+    }
 }

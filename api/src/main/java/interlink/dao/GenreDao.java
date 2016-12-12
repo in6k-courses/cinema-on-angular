@@ -12,6 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+import static org.hibernate.criterion.Restrictions.eq;
+
 @Transactional
 @Repository
 public class GenreDao {
@@ -29,5 +31,12 @@ public class GenreDao {
         Genre genre= new Genre(name);
         sessionFactory.getCurrentSession().save(genre);
         return genre;
+    }
+
+    public Genre deleteGenre(Integer id) {
+        Genre genre = (Genre) sessionFactory.getCurrentSession().createCriteria(Genre.class)
+                .add(eq("id", id)).uniqueResult();
+        sessionFactory.getCurrentSession().delete(genre);
+        return null;
     }
 }
