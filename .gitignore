@@ -5,3 +5,5 @@
 /client/e2e/
 /client/node_modules/
 /.idea/
+api/src/main/main.iml
+db/db.iml

@@ -7,7 +7,7 @@ import { Movie } from './movie';
 
 @Injectable()
 export class MovieService {
-  private moviesUrl = 'api/movie/';
+  private moviesUrl = 'api/movie';
   private headers = new Headers({'Content-Type': 'application/json'});
   constructor(private http: Http) { }
 
@@ -33,7 +33,7 @@ export class MovieService {
     return this.http
       .post(this.moviesUrl, JSON.stringify({name:name,description:description,duration:duration}), {headers: this.headers})
       .toPromise()
-      .then(res => res.json())
+      .then(movie => movie.json())
       .catch(this.handleError);
   }
 }

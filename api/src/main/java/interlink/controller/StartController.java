@@ -10,21 +10,21 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping(value = "/api/movie")
 public class StartController {
 
     @Autowired
     MovieService movieService;
 
-    @RequestMapping(value = "/movie", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.GET)
     @ResponseBody
     List<Movie> getAllMovies() {
         return movieService.getAllMovie();
     }
 
-    @RequestMapping(value = "/movie", method = RequestMethod.POST)
+    @RequestMapping(value = "", method = RequestMethod.POST)
     @ResponseBody
-    void addNewMovie(@RequestBody String name,@RequestBody String description,@RequestBody Integer duration){
-        movieService.addNewMovie(name,description,duration);
+    Movie addNewMovie(@RequestBody Movie movie){
+        return movieService.addNewMovie(movie.getName(),movie.getDescription(), Integer.parseInt(movie.getDuration().toString()));
     }
 }

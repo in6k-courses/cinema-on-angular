@@ -30,8 +30,9 @@ public class MovieDao {
         return movies;
     }
 
-    public void addNewMovie(String name,String description,Integer duration) {
+    public Movie addNewMovie(String name,String description,Integer duration) {
         Movie movie= new Movie(name,description,duration);
         sessionFactory.getCurrentSession().save(movie);
+        return movie;
     }
 }
