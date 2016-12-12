@@ -29,4 +29,13 @@ export class GenreComponent implements OnInit {
   onSelect(genre: Genre): void {
     this.selectedGenre = genre;
   }
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.genreService.create(name)
+      .then(genre => {
+        this.genres.push(genre);
+        this.selectedGenre = null;
+      });
+  }
 }

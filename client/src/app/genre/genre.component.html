@@ -7,6 +7,12 @@
             (click)="delete(genre); $event.stopPropagation()">x</button>
   </li>
 </ul>
+<div>
+  <label>name:</label> <input #name/><br>
+  <button (click)="add(name.value);name.value=''">
+    Add
+  </button>
+  </div>
 <div *ngIf="selectedGenre">
   <h2>
     {{selectedGenre.name | uppercase}} have rating {{selectedGenre.rating}}

@@ -29,4 +29,11 @@ export class GenreService {
     return Promise.reject(error.message || error);
   }
 
+  create(name: string) {
+    return this.http
+      .post(this.genreUrl, JSON.stringify({name:name}), {headers: this.headers})
+      .toPromise()
+      .then(genre => genre.json())
+      .catch(this.handleError);
+  }
 }

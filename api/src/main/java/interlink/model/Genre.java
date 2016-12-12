@@ -20,7 +20,11 @@ public class Genre {
     public Genre() {
     }
 
-    public Genre(String name,Integer rating) {
+    public Genre(String name) {
+        this.name = name;
+    }
+
+    public Genre(String name, Integer rating) {
         this.rating=rating;
         this.name = name;
     }

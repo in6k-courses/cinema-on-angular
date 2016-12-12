@@ -2,6 +2,7 @@ package interlink.dao;
 
 import interlink.model.Comments;
 import interlink.model.Genre;
+import interlink.model.Movie;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Order;
@@ -24,4 +25,9 @@ public class GenreDao {
     }
 
 
+    public Genre addNewGenre(String name) {
+        Genre genre= new Genre(name);
+        sessionFactory.getCurrentSession().save(genre);
+        return genre;
+    }
 }
