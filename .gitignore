@@ -1,9 +1,20 @@
 
-/api/.idea/
-/api/target/
-/.idea/
-api/src/main/main.iml
+.idea/compiler.xml
+.idea/copyright/
+.idea/dataSources.local.xml
+.idea/dataSources.xml
+.idea/dataSources/
+.idea/libraries/Spring_boot_1_8.xml
+.idea/libraries/Spring_boot_1_81.xml
+.idea/libraries/Spring_boot_1_82.xml
+.idea/libraries/Spring_boot_1_83.xml
+.idea/libraries/assets.xml
+.idea/libraries/assets1.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/typescript-settings.xml
+.idea/workspace.xml
+client/.idea/
+client/node_modules/
 db/db.iml
-/client/.idea/
 /client/e2e/
-/client/node_modules/

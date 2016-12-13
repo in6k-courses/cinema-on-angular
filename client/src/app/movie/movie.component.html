@@ -12,8 +12,8 @@
   <li *ngFor="let movie of movies" (click)="onSelect(movie)">
     <span>{{movie.name}}</span>
     <h3>Comm:</h3>
-    <div *ngFor="let comm of movies.comms">
-     <span>{{comm.like}}</span>
+    <div *ngFor="let com of movie.comm">
+     <span>{{com.like}}</span>
     </div>
     <h3>End</h3>
   </li>

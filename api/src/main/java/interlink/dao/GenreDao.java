@@ -26,9 +26,8 @@ public class GenreDao {
         return (List<Genre>) criteria.list();
     }
 
-
     public Genre addNewGenre(String name) {
-        Genre genre= new Genre(name);
+        Genre genre = new Genre(name);
         sessionFactory.getCurrentSession().save(genre);
         return genre;
     }

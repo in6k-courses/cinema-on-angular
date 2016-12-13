@@ -4,5 +4,5 @@ export class Movie {
   name: string;
   description: string;
   duration: number;
-  comms: Comm[];
+  comm: Comm[];
 }
