@@ -25,4 +25,10 @@ public class CommentsDao {
         }
         return commentses;
     }
+
+    public Comments addNewComm(Integer like, Integer id) {
+        Comments comments = new Comments(like,id);
+        sessionFactory.getCurrentSession().save(comments);
+        return comments;
+    }
 }

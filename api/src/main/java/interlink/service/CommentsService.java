@@ -18,4 +18,8 @@ public class CommentsService {
     public List<Comments> getAllComm(){
         return commentsDao.getAllComm();
     }
+
+    public Comments addNewComm(Comments comments) {
+        return commentsDao.addNewComm(comments.getLike(),comments.getMovie_id());
+    }
 }

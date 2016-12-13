@@ -23,12 +23,13 @@ public class GenreController {
 
     @RequestMapping(value = "", method = RequestMethod.POST)
     @ResponseBody
-    Genre addNewMovie(@RequestBody Genre genre){
+    Genre addNewMovie(@RequestBody Genre genre) {
         return genreService.addNewGenre(genre.getName());
     }
+
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     @ResponseBody
-    Genre deleteGenre(@PathVariable("id") Integer id){
+    Genre deleteGenre(@PathVariable("id") Integer id) {
         return genreService.deleteGenre(id);
     }
 }

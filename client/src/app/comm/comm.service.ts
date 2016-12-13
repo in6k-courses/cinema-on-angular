@@ -29,4 +29,13 @@ export class CommService {
     // console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
   }
+
+  create(like: number,movie_id:number) {
+    return this.http
+      .post(this.commUrl, JSON.stringify({like:like,movie_id:movie_id}), {headers: this.headers})
+      .toPromise()
+      .then(comm => comm.json())
+      .catch(this.handleError);
+  }
+
 }
