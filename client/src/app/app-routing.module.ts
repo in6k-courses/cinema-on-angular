@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/genre', pathMatch: 'full'},
   {path: 'movies', component: MovieComponent},
   {path: 'genre', component: GenreComponent},
-  {path: 'detail/:id', component: DescrComponent},
+  {path: 'details/:id', component: DescrComponent},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

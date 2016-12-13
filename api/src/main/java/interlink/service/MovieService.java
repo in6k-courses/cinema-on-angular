@@ -25,4 +25,8 @@ public class MovieService {
         movieDao.deleteMovie(id);
         return null;
     }
+
+    public Movie getMovieById(Integer id) {
+        return movieDao.getMovieById(id);
+    }
 }

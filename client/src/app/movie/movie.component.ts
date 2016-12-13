@@ -27,7 +27,7 @@ export class MovieComponent implements OnInit {
   }
 
   gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedMovie.id]);
+    this.router.navigate(['/details', this.selectedMovie.id]);
   }
 
   onSelect(movie: Movie): void {

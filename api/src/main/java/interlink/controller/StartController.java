@@ -33,4 +33,11 @@ public class StartController {
     Movie deleteMovie(@PathVariable("id") Integer id) {
         return movieService.deleteMovie(id);
     }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    Movie getMovieById(@PathVariable("id") Integer id) {
+        return movieService.getMovieById(id);
+    }
+
 }

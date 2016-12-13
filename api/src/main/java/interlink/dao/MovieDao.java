@@ -25,9 +25,7 @@ public class MovieDao {
         List<Movie> movies = (List<Movie>) criteria.list();
         for(Movie movie:movies){
             movie.getName();
-            for (Comments comments:movie.getComm()){
-                comments.getLike();
-            }
+            movie.getComm().forEach(Comments::getLike);
         }
         return movies;
     }
@@ -43,5 +41,13 @@ public class MovieDao {
             .add(eq("id", id)).uniqueResult();
         sessionFactory.getCurrentSession().delete(movie);
         return null;
+    }
+
+    public Movie getMovieById(Integer id) {
+        Movie movie=(Movie) sessionFactory.getCurrentSession().createCriteria(Movie.class)
+                .add(eq("id",id))
+                .uniqueResult();
+        movie.getComm().forEach(Comments::getLike);
+        return movie;
     }
 }
