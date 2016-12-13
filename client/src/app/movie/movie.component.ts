@@ -13,7 +13,8 @@ import { MovieService } from './movie.service';
 export class MovieComponent implements OnInit {
   movies: Movie[];
   selectedMovie: Movie;
-
+  selectedView : boolean;
+  // selectedView=false;
   constructor(
     private router: Router,
     private movieService: MovieService) { }
@@ -32,6 +33,10 @@ export class MovieComponent implements OnInit {
 
   onSelect(movie: Movie): void {
     this.selectedMovie = movie;
+  }
+
+  view(view: boolean):void{
+    this.selectedView=view;
   }
 
   add(name: string,description:string,duration:number): void {
