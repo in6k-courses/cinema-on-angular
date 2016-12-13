@@ -20,10 +20,13 @@ export class MovieService {
   }
 
   getMovie(id: number): Promise<Movie> {
-    return this.http.get(this.moviesUrl+"/"+id)
-      .toPromise()
-      .then(response => response.json() as Movie)
-      .catch(this.handleError);
+    // return this.http
+    //   .get(this.moviesUrl+"/"+id)
+    //   .toPromise()
+    //   .then(response => response.json() as Movie)
+    //   .catch(this.handleError);
+    return this.getMovies()
+      .then(movies => movies.find(movie => movie.id === id));
   }
 
   private handleError(error: any): Promise<any> {
