@@ -1,7 +1,7 @@
 FROM java:8
 
 RUN apt-get update
-RUN apt-get install -y wget telnet
+RUN apt-get install
 
 RUN wget --no-verbose -O /tmp/apache-maven-3.2.2.tar.gz http://archive.apache.org/dist/maven/maven-3/3.2.2/binaries/apache-maven-3.2.2-bin.tar.gz
 

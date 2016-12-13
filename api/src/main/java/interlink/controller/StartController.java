@@ -24,13 +24,13 @@ public class StartController {
 
     @RequestMapping(value = "", method = RequestMethod.POST)
     @ResponseBody
-    Movie addNewMovie(@RequestBody Movie movie){
-        return movieService.addNewMovie(movie.getName(),movie.getDescription(), movie.getDuration());
+    Movie addNewMovie(@RequestBody Movie movie) {
+        return movieService.addNewMovie(movie);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     @ResponseBody
-    Movie deleteMovie(@PathVariable("id") Integer id){
+    Movie deleteMovie(@PathVariable("id") Integer id) {
         return movieService.deleteMovie(id);
     }
 }

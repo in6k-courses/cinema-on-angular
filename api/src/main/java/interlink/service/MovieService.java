@@ -17,8 +17,8 @@ public class MovieService {
         return movieDao.getAllMovie();
     }
 
-    public Movie addNewMovie(String name,String description,Integer duration) {
-        return movieDao.addNewMovie(name,description,duration);
+    public Movie addNewMovie(Movie movie) {
+        return movieDao.addNewMovie(movie.getName(),movie.getDescription(),movie.getDuration());
     }
 
     public Movie deleteMovie(Integer id) {
