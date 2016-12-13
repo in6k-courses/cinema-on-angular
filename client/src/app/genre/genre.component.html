@@ -5,7 +5,8 @@
     <span class="badge">{{genre.id}}</span>
     <span>{{genre.name}}</span>
     <button class="delete"
-            (click)="delete(genre); $event.stopPropagation()">x</button>
+            (click)="delete(genre); $event.stopPropagation()">x
+    </button>
   </li>
 </ul>
 <div>
@@ -13,7 +14,7 @@
   <button (click)="add(name.value);name.value=''">
     Add
   </button>
-  </div>
+</div>
 <div *ngIf="selectedGenre">
   <h2>
     {{selectedGenre.name | uppercase}} have rating {{selectedGenre.rating}}

@@ -5,19 +5,11 @@
     <span class="badge">{{movie.id}}</span>
     <span>{{movie.name}}</span>
     <button class="delete"
-            (click)="delete(movie); $event.stopPropagation()">x</button>
+            (click)="delete(movie); $event.stopPropagation()">x
+    </button>
   </li>
 </ul>
 <div>
-  <li *ngFor="let movie of movies" (click)="onSelect(movie)">
-    <span>{{movie.name}}</span>
-    <h3>Comm:</h3>
-    <div *ngFor="let com of movie.comm">
-     <span>{{com.like}}</span>
-    </div>
-    <h3>End</h3>
-  </li>
-
   <label>name:</label> <input #name/><br>
   <label>description:</label> <input #description/><br>
   <label>duration:</label> <input #duration/><br>
@@ -25,7 +17,6 @@
   name.value='';duration.value='';description.value=''">
     Add
   </button>
-
 </div>
 <div *ngIf="selectedMovie">
   <h2>

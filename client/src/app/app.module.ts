@@ -12,13 +12,15 @@ import {MovieService} from "./movie/movie.service";
 import {GenreService} from "./genre/genre.service";
 import { CommComponent } from './comm/comm.component';
 import {CommService} from "./comm/comm.service";
+import { DescrComponent } from './descr/descr.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GenreComponent,
     MovieComponent,
-    CommComponent
+    CommComponent,
+    DescrComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,7 @@ import {CommService} from "./comm/comm.service";
     AppRoutingModule,
     HttpModule
   ],
-  providers: [ GenreService,MovieService,CommService ],
+  providers: [ GenreService,MovieService,CommService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
