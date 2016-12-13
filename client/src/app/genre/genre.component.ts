@@ -13,6 +13,7 @@ import { GenreService } from './genre.service';
 export class GenreComponent implements OnInit {
   genres: Genre[];
   selectedGenre: Genre;
+  selectedView : boolean;
 
   constructor(
     private router: Router,
@@ -28,6 +29,9 @@ export class GenreComponent implements OnInit {
 
   onSelect(genre: Genre): void {
     this.selectedGenre = genre;
+  }
+  view(view: boolean):void{
+    this.selectedView=!view;
   }
   add(name: string): void {
     name = name.trim();

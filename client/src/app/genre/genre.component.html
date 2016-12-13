@@ -9,7 +9,9 @@
     </button>
   </li>
 </ul>
-<div>
+<button (click)="view(selectedView)">Add new Genre</button>
+
+<div *ngIf="selectedView">
   <label>name:</label> <input #name/><br>
   <button (click)="add(name.value);name.value=''">
     Add

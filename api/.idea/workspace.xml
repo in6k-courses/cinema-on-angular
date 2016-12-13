@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="00112668-905f-401e-82f7-5a8bbbcb3b02" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/app/app-routing.module.ts" afterPath="$PROJECT_DIR$/../client/src/app/app-routing.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/app/app.module.ts" afterPath="$PROJECT_DIR$/../client/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/app/comm/comm.component.html" afterPath="$PROJECT_DIR$/../client/src/app/comm/comm.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/app/genre/genre.component.html" afterPath="$PROJECT_DIR$/../client/src/app/genre/genre.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/app/index.ts" afterPath="$PROJECT_DIR$/../client/src/app/index.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/app/genre/genre.component.ts" afterPath="$PROJECT_DIR$/../client/src/app/genre/genre.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/app/movie/movie.component.html" afterPath="$PROJECT_DIR$/../client/src/app/movie/movie.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/app/movie/movie.component.ts" afterPath="$PROJECT_DIR$/../client/src/app/movie/movie.component.ts" />
     </list>
@@ -153,8 +150,8 @@
       <file leaf-file-name="MovieDao.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/interlink/dao/MovieDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+            <state relative-caret-position="360">
+              <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -955,7 +952,7 @@
       <workItem from="1481550952714" duration="96000" />
       <workItem from="1481551132502" duration="3822000" />
       <workItem from="1481555333353" duration="3423000" />
-      <workItem from="1481613409964" duration="2453000" />
+      <workItem from="1481613409964" duration="4519000" />
     </task>
     <task id="LOCAL-00001" summary="worked">
       <created>1481214709749</created>
@@ -1027,11 +1024,25 @@
       <option name="project" value="LOCAL" />
       <updated>1481614432530</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="front for get one movie">
+      <created>1481621383158</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1481621383158</updated>
+    </task>
+    <task id="LOCAL-00012" summary="can view form to add">
+      <created>1481632399770</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1481632399770</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40215000" />
+    <option name="totallyTimeSpent" value="42281000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1400" height="1026" extended-state="6" />
@@ -1090,7 +1101,9 @@
     <MESSAGE value="can delete genre" />
     <MESSAGE value="nothing" />
     <MESSAGE value="can view comm of movie" />
-    <option name="LAST_COMMIT_MESSAGE" value="can view comm of movie" />
+    <MESSAGE value="front for get one movie" />
+    <MESSAGE value="can view form to add" />
+    <option name="LAST_COMMIT_MESSAGE" value="can view form to add" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1431,8 +1444,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/interlink/dao/MovieDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        <state relative-caret-position="360">
+          <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
           <folding />
         </state>
       </provider>
