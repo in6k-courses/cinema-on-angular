@@ -1,12 +1,9 @@
 <h2>Top Genres</h2>
-<ul class="heroes">
+<ul class="nav nav-pills nav-stacked">
   <li *ngFor="let genre of genres" (click)="onSelect(genre)"
       [class.selected]="genre === selectedGenre">
-    <span class="badge">{{genre.id}}</span>
+    <span class="badge">{{genre.rating}}</span>
     <span>{{genre.name}}</span>
-    <button class="delete"
-            (click)="delete(genre); $event.stopPropagation()">x
-    </button>
   </li>
 </ul>
 <button (click)="view(selectedView)">Add new Genre</button>
@@ -22,4 +19,7 @@
     {{selectedGenre.name | uppercase}} have rating {{selectedGenre.rating}}
   </h2>
   <button (click)="gotoDetail()">View Films</button>
+  <button class="delete"
+          (click)="delete(selectedGenre); $event.stopPropagation()">x
+  </button>
 </div>

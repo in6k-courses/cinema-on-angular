@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { GenreComponent } from './genre/genre.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from "./app-routing.module";
+import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 import { HttpModule } from "@angular/http";
 import { MovieComponent } from './movie/movie.component';
@@ -26,7 +27,8 @@ import { DescrComponent } from './descr/descr.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    AlertModule
   ],
   providers: [ GenreService,MovieService,CommService],
   bootstrap: [ AppComponent ]
