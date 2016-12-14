@@ -1,34 +1,41 @@
 <h2>Top Genres</h2>
+
 <ul class="nav nav-pills nav-stacked">
-  <table class="table table-striped">
-    <thead>
-      <th>№</th>
-      <th>Name</th>
-      <th>Likes</th>
-    </thead>
-  <tr *ngFor="let genre of genres" (click)="onSelect(genre)"
-      [class.selected]="genre === selectedGenre">
-    <td>
-      {{genre.id}}
-    </td>
-    <td>
-      {{genre.name}}
-    </td>
-    <td>
-      {{genre.rating}}
-    </td>
-    <td>
-      <button class="btn btn-danger"
-              (click)="delete(selectedGenre); $event.stopPropagation()">Delete
-      </button>
-    </td>
-    <td>
-      <button class="btn btn-warning"
-              (click)="gotoDetail(); $event.stopPropagation()">View
-      </button>
-    </td>
-  </tr>
-  </table>
+  <div class="container">
+    <div class="row">
+      <div class="panel panel-default" col-md-12>
+        <table class="table table-striped">
+          <thead>
+          <th>№</th>
+          <th>Name</th>
+          <th>Likes</th>
+          </thead>
+          <tr *ngFor="let genre of genres; let num=index" (click)="onSelect(genre)"
+              [class.selected]="genre === selectedGenre">
+            <td>
+              {{num+1}}
+            </td>
+            <td>
+              {{genre.name}}
+            </td>
+            <td>
+              {{genre.rating}}
+            </td>
+            <td>
+              <button class="btn btn-danger"
+                      (click)="delete(selectedGenre); $event.stopPropagation()">Delete
+              </button>
+            </td>
+            <td>
+              <button class="btn btn-warning"
+                      (click)="gotoDetail(); $event.stopPropagation()">View
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
 </ul>
 <button (click)="view(selectedView)">Add new Genre</button>
 
@@ -38,12 +45,10 @@
     Add
   </button>
 </div>
+
 <div *ngIf="selectedGenre">
   <h2>
     {{selectedGenre.name | uppercase}} have rating {{selectedGenre.rating}}
   </h2>
   <button (click)="gotoDetail()">View Films</button>
-  <!--<button class="delete"-->
-          <!--(click)="delete(selectedGenre); $event.stopPropagation()">x-->
-  <!--</button>-->
 </div>
