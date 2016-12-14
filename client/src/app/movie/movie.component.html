@@ -1,19 +1,18 @@
 <h2>My Films</h2>
-<ul class="list-group">
-  <li *ngFor="let movie of movies" (click)="onSelect(movie)"
-      [class.selected]="movie === selectedMovie" class="list-group-item active">
-    <!--<span class="badge">{{movie.id}}</span>-->
-    <h4 class="list-group-item-heading">{{movie.name}}</h4>
-    <p class="list-group-item-text">{{movie.description}}</p>
-  </li>
-</ul>
 
-<!--<div class="list-group">-->
-  <!--<a href="#" class="list-group-item active">-->
-    <!--<h4 class="list-group-item-heading">List group item heading</h4>-->
-    <!--<p class="list-group-item-text">...</p>-->
-  <!--</a>-->
-<!--</div>-->
+<div *ngFor="let movie of movies" (click)="onSelect(movie)"
+     [class.selected]="movie === selectedMovie">
+  <div class="list-group">
+    <a class="list-group-item">
+      <!--<span class="badge">{{movie.id}}</span>-->
+      <h4 class="list-group-item-heading">{{movie.name}}</h4>
+      <h6 class="list-group-item-text">{{movie.description}}</h6>
+        <button class="delete"
+                (click)="delete(movie); $event.stopPropagation()">x
+        </button>
+    </a>
+  </div>
+</div>
 
 <button (click)="view(selectedView)">Add new Movie</button>
 
@@ -29,9 +28,7 @@
     </div>
   </h4>
   <button (click)="gotoDetail()">View Details</button>
-  <button class="delete"
-          (click)="delete(movie); $event.stopPropagation()">x
-  </button>
+
 </div>
 
 <div *ngIf="selectedView">
