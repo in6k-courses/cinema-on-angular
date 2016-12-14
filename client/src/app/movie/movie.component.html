@@ -1,23 +1,51 @@
 <h2>My Films</h2>
-<div class="container">
+<div class="container" >
   <div class="row">
-    <div class="panel panel-default" col-md-2>
-      <div *ngFor="let movie of movies" (click)="onSelect(movie)"
-           [class.selected]="movie === selectedMovie">
-        <div class="list-group" >
-          <a class="list-group-item">
-            <!--<span class="badge">{{movie.id}}</span>-->
-            <h4 class="list-group-item-heading">{{movie.name}}</h4>
-            <h6 class="list-group-item-text">{{movie.description}}</h6>
-            <!--<button class="delete"-->
-            <!--(click)="delete(movie); $event.stopPropagation()">x-->
-            <!--</button>-->
-          </a>
-        </div>
-      </div>
+    <div class="panel panel-default" col-md-6 col-xs-2>
+      <table class="table table-striped" cursor>
+        <tr>
+          <td>
+            Name
+          </td>
+        </tr>
+        <tr *ngFor="let movie of movies" (click)="onSelect(movie)"
+            [class.selected]="movie === selectedMovie">
+          <td>
+            {{movie.name}}
+          </td>
+          <td>
+            {{movie.rating}}
+          </td>
+          <td>
+            <button class="btn btn-danger"
+                    (click)="delete(selectedMovie); $event.stopPropagation()">Delete
+            </button>
+          </td>
+          <td>
+            <button class="btn btn-warning"
+                    (click)="gotoDetail(movie); $event.stopPropagation()">View
+            </button>
+          </td>
+        </tr>
+      </table>
     </div>
   </div>
 </div>
+<!--<div class="container">-->
+  <!--<div class="row">-->
+    <!--<div class="panel panel-default" col-md-2>-->
+      <!--<div *ngFor="let movie of movies" (click)="onSelect(movie)"-->
+           <!--[class.selected]="movie === selectedMovie">-->
+        <!--<div class="list-group">-->
+            <!--<h4 class="list-group-item-heading">{{movie.name}}</h4>-->
+            <!--<h6 class="list-group-item-text">{{movie.description}}</h6>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+
 <button (click)="view(selectedView)">Add new Movie</button>
 
 <div *ngIf="selectedMovie">
