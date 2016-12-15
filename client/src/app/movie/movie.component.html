@@ -1,73 +1,74 @@
 <h2>My Films</h2>
-<div class="container" >
-  <div class="row">
-    <div class="panel panel-default" col-md-6 col-xs-2>
-      <table class="table table-striped" cursor>
-        <tr>
-          <td>
-            Name
-          </td>
-        </tr>
-        <tr *ngFor="let movie of movies" (click)="onSelect(movie)"
-            [class.selected]="movie === selectedMovie">
-          <td>
-            {{movie.name}}
-          </td>
-          <td>
-            {{movie.rating}}
-          </td>
-          <td>
-            <button class="btn btn-danger"
-                    (click)="delete(selectedMovie); $event.stopPropagation()">Delete
-            </button>
-          </td>
-          <td>
-            <button class="btn btn-warning"
-                    (click)="gotoDetail(movie); $event.stopPropagation()">View
-            </button>
-          </td>
-        </tr>
-      </table>
+<ul class="nav nav-pills nav-stacked">
+  <div class="container">
+    <div class="row">
+      <div class="panel panel-default" col-md-6 col-xs-2>
+        <table class="table table-striped" cursor>
+          <tr>
+            <td>
+              Name
+            </td>
+          </tr>
+          <tr *ngFor="let movie of movies" (click)="onSelect(movie)"
+              [class.selected]="movie === selectedMovie">
+            <td>
+              {{movie.name}}
+            </td>
+            <td>
+              {{movie.rating}}
+            </td>
+            <td>
+              <button class="btn btn-danger"
+                      (click)="delete(movie); $event.stopPropagation()">Delete
+              </button>
+            </td>
+            <td>
+              <button class="btn btn-warning"
+                      (click)="gotoDetail(movie); $event.stopPropagation()">View Details
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
-</div>
+</ul>
 <!--<div class="container">-->
-  <!--<div class="row">-->
-    <!--<div class="panel panel-default" col-md-2>-->
-      <!--<div *ngFor="let movie of movies" (click)="onSelect(movie)"-->
-           <!--[class.selected]="movie === selectedMovie">-->
-        <!--<div class="list-group">-->
-            <!--<h4 class="list-group-item-heading">{{movie.name}}</h4>-->
-            <!--<h6 class="list-group-item-text">{{movie.description}}</h6>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
+<!--<div class="row">-->
+<!--<div class="panel panel-default" col-md-2>-->
+<!--<div *ngFor="let movie of movies" (click)="onSelect(movie)"-->
+<!--[class.selected]="movie === selectedMovie">-->
+<!--<div class="list-group">-->
+<!--<h4 class="list-group-item-heading">{{movie.name}}</h4>-->
+<!--<h6 class="list-group-item-text">{{movie.description}}</h6>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
 <!--</div>-->
 
 
-<button (click)="view(selectedView)">Add new Movie</button>
+<button  type="submit" class="btn btn-default" (click)="view(selectedView)">Add new Movie</button>
 
-<div *ngIf="selectedMovie">
-  <h2>
-    {{selectedMovie.name | uppercase}} is my favorite movie
-  </h2>
-  <h4>
-    <div>
-      <div *ngFor="let com of selectedMovie.comm">
-        <span>like:{{com.like}}</span>
-      </div>
-    </div>
-  </h4>
-  <button (click)="gotoDetail()">View Details</button>
-
-</div>
+<!--<div *ngIf="selectedMovie">-->
+  <!--<h2>-->
+    <!--{{selectedMovie.name | uppercase}} is my favorite movie-->
+  <!--</h2>-->
+  <!--<h4>-->
+    <!--<div>-->
+      <!--<div *ngFor="let com of selectedMovie.comm">-->
+        <!--<span>like:{{com.like}}</span>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</h4>-->
+  <!--<button (click)="gotoDetail()">View Details</button>-->
+<!--</div>-->
 
 <div *ngIf="selectedView">
-  <label>name:</label> <input #name/><br>
-  <label>description:</label> <input #description/><br>
-  <label>duration:</label> <input #duration/><br>
-  <button (click)="add(name.value,description.value,duration.value);
+  <label>Name: </label> <input #name/><br>
+  <label>Description:</label> <input #description/><br>
+  <label>Duration:</label> <input #duration placeholder="120"/><br>
+  <button type="submit" class="btn btn-default" (click)="add(name.value,description.value,duration.value);
   name.value='';duration.value='';description.value=''">
     Add
   </button>
