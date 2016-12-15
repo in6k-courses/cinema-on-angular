@@ -1,48 +1,59 @@
-<h2>Top Genres</h2>
-<ul class="nav nav-pills nav-stacked">
-  <div class="container">
-    <div class="row">
-      <div class="panel panel-default" col-md-12>
-        <table class="table table-striped" cursor>
-          <tr>
-          <td>
-            №
-          </td>
-          <td>
-            Name
-          </td>
-          <td>
-            Likes
-          </td>
-          </tr>
-          <tr *ngFor="let genre of genres; let num=index" (click)="onSelect(genre)"
-              [class.selected]="genre === selectedGenre">
-            <td>
-              {{num+1}}
-            </td>
-            <td>
-              {{genre.name}}
-            </td>
-            <td>
-              {{genre.rating}}
-            </td>
-            <td>
-              <button class="btn btn-danger"
-                      (click)="delete(genre); $event.stopPropagation()">Delete
-              </button>
-            </td>
-            <td>
-              <button class="btn btn-warning"
-                      (click)="gotoDetail(genre); $event.stopPropagation()">view Films
-              </button>
-            </td>
-          </tr>
-        </table>
+<div class="col-md-0 col-md-offset-10">
+  <button type="submit" class="btn btn-info"
+          (click)="view(selectedView)">Add new Genre
+  </button>
+</div>
+<div>
+  <ul class="nav nav-pills nav-stacked">
+    <div class="container">
+      <div class="row">
+        <div class="panel panel-default" col-md-6 col-xs-2>
+          <div class="col-md-4 col-md-offset-5">Top Genres</div>
+          <table class="table table-striped" cursor>
+            <tr>
+              <td>
+                №
+              </td>
+              <td>
+                Name
+              </td>
+              <td>
+                Likes
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+            </tr>
+            <tr *ngFor="let genre of genres; let num=index" (click)="onSelect(genre)"
+                [class.selected]="genre === selectedGenre">
+              <td>
+                {{num+1}}
+              </td>
+              <td>
+                {{genre.name}}
+              </td>
+              <td>
+                {{genre.rating}}
+              </td>
+              <td>
+                <button class="btn btn-warning"
+                        (click)="gotoDetail(genre); $event.stopPropagation()">view Films
+                </button>
+              </td>
+              <td>
+                <button class="btn btn-danger"
+                        (click)="delete(genre); $event.stopPropagation()">Delete
+                </button>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
-</ul>
-<button type="submit" class="btn btn-default" (click)="view(selectedView)">Add new Genre</button>
+  </ul>
+</div>
+<!--<button type="submit" class="btn btn-default" (click)="view(selectedView)">Add new Genre</button>-->
 
 <div *ngIf="selectedView">
   <h2>Add new Genre </h2>
@@ -53,8 +64,8 @@
 </div>
 
 <!--<div *ngIf="selectedGenre">-->
-  <!--<h2>-->
-    <!--{{selectedGenre.name | uppercase}} have rating {{selectedGenre.rating}}-->
-  <!--</h2>-->
-  <!--<button (click)="gotoDetail()">View Films</button>-->
+<!--<h2>-->
+<!--{{selectedGenre.name | uppercase}} have rating {{selectedGenre.rating}}-->
+<!--</h2>-->
+<!--<button (click)="gotoDetail()">View Films</button>-->
 <!--</div>-->

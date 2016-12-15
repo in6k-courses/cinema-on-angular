@@ -1,67 +1,62 @@
-<h2>My Films</h2>
-<ul class="nav nav-pills nav-stacked">
-  <div class="container">
-    <div class="row">
-      <div class="panel panel-default" col-md-6 col-xs-2>
-        <table class="table table-striped" cursor>
-          <tr>
-            <td>
-              Name
-            </td>
-          </tr>
-          <tr *ngFor="let movie of movies" (click)="onSelect(movie)"
-              [class.selected]="movie === selectedMovie">
-            <td>
-              {{movie.name}}
-            </td>
-            <td>
-              {{movie.rating}}
-            </td>
-            <td>
-              <button class="btn btn-danger"
-                      (click)="delete(movie); $event.stopPropagation()">Delete
-              </button>
-            </td>
-            <td>
-              <button class="btn btn-warning"
-                      (click)="gotoDetail(movie); $event.stopPropagation()">View Details
-              </button>
-            </td>
-          </tr>
-        </table>
+<div class="col-md-0 col-md-offset-10">
+  <button type="submit" class="btn btn-info"
+          (click)="view(selectedView)">Add new Movie
+  </button>
+</div>
+<div>
+  <ul class="nav nav-pills nav-stacked">
+    <div class="container">
+      <div class="row">
+        <div class="panel panel-default" col-md-6 col-xs-2>
+          <div class="col-md-4 col-md-offset-5">Movies</div>
+          <table class="table table-striped" cursor>
+            <tr>
+              <td>
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+            </tr>
+            <tr *ngFor="let movie of movies" (click)="onSelect(movie)"
+                [class.selected]="movie === selectedMovie">
+              <td>
+                {{movie.name}}
+              </td>
+              <td>
+                {{movie.rating}}
+              </td>
+              <td>
+                <button class="btn btn-warning"
+                        (click)="gotoDetail(movie); $event.stopPropagation()">View Details
+                </button>
+              </td>
+              <td>
+                <button class="btn btn-danger"
+                        (click)="delete(movie); $event.stopPropagation()">Delete
+                </button>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
-</ul>
-<!--<div class="container">-->
-<!--<div class="row">-->
-<!--<div class="panel panel-default" col-md-2>-->
-<!--<div *ngFor="let movie of movies" (click)="onSelect(movie)"-->
-<!--[class.selected]="movie === selectedMovie">-->
-<!--<div class="list-group">-->
-<!--<h4 class="list-group-item-heading">{{movie.name}}</h4>-->
-<!--<h6 class="list-group-item-text">{{movie.description}}</h6>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-
-
-<button  type="submit" class="btn btn-default" (click)="view(selectedView)">Add new Movie</button>
-
+  </ul>
+</div>
 <!--<div *ngIf="selectedMovie">-->
-  <!--<h2>-->
-    <!--{{selectedMovie.name | uppercase}} is my favorite movie-->
-  <!--</h2>-->
-  <!--<h4>-->
-    <!--<div>-->
-      <!--<div *ngFor="let com of selectedMovie.comm">-->
-        <!--<span>like:{{com.like}}</span>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</h4>-->
-  <!--<button (click)="gotoDetail()">View Details</button>-->
+<!--<h2>-->
+<!--{{selectedMovie.name | uppercase}} is my favorite movie-->
+<!--</h2>-->
+<!--<h4>-->
+<!--<div>-->
+<!--<div *ngFor="let com of selectedMovie.comm">-->
+<!--<span>like:{{com.like}}</span>-->
+<!--</div>-->
+<!--</div>-->
+<!--</h4>-->
+<!--<button (click)="gotoDetail()">View Details</button>-->
 <!--</div>-->
 
 <div *ngIf="selectedView">
