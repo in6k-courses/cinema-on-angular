@@ -20,8 +20,8 @@ public class GenreService {
         return list;
     }
 
-    public Genre addNewGenre(String name) {
-        return genreDao.addNewGenre(name);
+    public Genre addNewGenre(Genre genre) {
+        return genreDao.addNewGenre(genre.getName());
     }
 
     public Genre deleteGenre(Integer id) {

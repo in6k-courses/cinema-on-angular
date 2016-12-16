@@ -56,11 +56,17 @@
 <!--<button type="submit" class="btn btn-default" (click)="view(selectedView)">Add new Genre</button>-->
 
 <div *ngIf="selectedView">
-  <h2>Add new Genre </h2>
-  <label>Name: </label> <input #name placeholder="Name of Genre"/><br>
-  <button type="submit" class="btn btn-default" (click)="add(name.value);name.value='';">
-    Add
-  </button>
+  <div class="container">
+    <div class="row">
+      <div class="panel panel-default" col-md-6 col-xs-2>
+        <h2>Add new Genre </h2>
+        <label>Name: </label> <input #name placeholder="Name of Genre"/><br>
+        <button type="submit" class="btn btn-default" (click)="add(name.value);name.value='';">
+          Add
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!--<div *ngIf="selectedGenre">-->

@@ -24,7 +24,7 @@ public class GenreController {
     @RequestMapping(value = "", method = RequestMethod.POST)
     @ResponseBody
     Genre addNewMovie(@RequestBody Genre genre) {
-        return genreService.addNewGenre(genre.getName());
+        return genreService.addNewGenre(genre);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)

@@ -15,14 +15,15 @@ public class CommentsController {
     @Autowired
     CommentsService commentsService;
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     List<Comments> getAllComm() {
         return commentsService.getAllComm();
     }
 
-    @RequestMapping(value = "", method = RequestMethod.POST)
-    Comments addNewComm(@RequestBody Comments comments) {
+    @RequestMapping(method = RequestMethod.POST)
+    @ResponseBody
+    Comments addNewComm(@RequestBody()Comments comments) {
         return commentsService.addNewComm(comments);
     }
 }

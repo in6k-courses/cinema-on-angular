@@ -36,10 +36,6 @@ export class GenreComponent implements OnInit {
   }
 
   add(name: string): void {
-    name = name.trim();
-    if (!name) {
-      return;
-    }
     this.genreService.create(name)
       .then(genre => {
         this.genres.push(genre);
