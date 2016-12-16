@@ -34,7 +34,7 @@ public class GenreDao {
 
     public Genre deleteGenre(Integer id) {
         Genre genre = (Genre) sessionFactory.getCurrentSession().createCriteria(Genre.class)
-                .add(eq("id", id)).uniqueResult();
+                .add(eq("genre_id", id)).uniqueResult();
         sessionFactory.getCurrentSession().delete(genre);
         return null;
     }

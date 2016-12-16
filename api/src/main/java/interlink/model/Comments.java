@@ -16,12 +16,12 @@ public class Comments {
     @Column(name = "like")
     Integer like;
 
-    @Column(name = "movie_id")
+    @Column(name = "movie_id_forComm")
     Integer movie_id;
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "movie_id", insertable = false, updatable = false)
+    @JoinColumn(name = "movie_id_forComm", insertable = false, updatable = false)
     private Movie movie;
 
     public Comments() {

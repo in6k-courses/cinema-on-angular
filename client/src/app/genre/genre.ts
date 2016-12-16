@@ -1,5 +1,5 @@
 export class Genre {
-  id: number;
+  genre_id: number;
   name: string;
   rating:number;
 }

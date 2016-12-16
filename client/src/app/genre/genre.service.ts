@@ -21,7 +21,7 @@ export class GenreService {
 
   getGenre(id: number): Promise<Genre> {
     return this.getGenres()
-      .then(genres => genres.find(genre => genre.id === id));
+      .then(genres => genres.find(genre => genre.genre_id === id));
   }
 
   private handleError(error: any): Promise<any> {

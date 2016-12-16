@@ -1,8 +1,5 @@
 package interlink.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +11,8 @@ public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "id", nullable = false)
-    Integer id;
+    @Column(name = "movie_id", nullable = false)
+    Integer movie_id;
 
     @Column(name = "name")
     String name;
@@ -38,12 +35,12 @@ public class Movie {
         this.duration = duration;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getMovie_id() {
+        return movie_id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setMovie_id(Integer movie_id) {
+        this.movie_id = movie_id;
     }
 
     public String getName() {

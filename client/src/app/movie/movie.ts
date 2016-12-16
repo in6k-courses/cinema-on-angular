@@ -1,6 +1,6 @@
 import {Comm} from "../comm/comm";
 export class Movie {
-  id: number;
+  movie_id: number;
   name: string;
   description: string;
   duration: number;

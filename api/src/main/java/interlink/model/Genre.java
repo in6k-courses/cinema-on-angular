@@ -8,8 +8,8 @@ public class Genre {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    Integer id;
+    @Column(name = "genre_id", nullable = false)
+    Integer genre_id;
 
     @Column(name = "name")
     String name;
@@ -29,12 +29,12 @@ public class Genre {
         this.name = name;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getGenre_id() {
+        return genre_id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setGenre_id(Integer genre_id) {
+        this.genre_id = genre_id;
     }
 
     public Integer getRating() {

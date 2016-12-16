@@ -26,10 +26,10 @@ export class CommService {
     return Promise.reject(error.message || error);
   }
 
-  createComm(like: number, movie_id: number): Promise<Comment> {
+  createComm(like: number, movie_id_forComm: number): Promise<Comment> {
     // alert("" + like + "!" + movie_id + "!");
     return this.http
-      .post(this.commUrl, JSON.stringify({like: like, movie_id: movie_id}), {headers: this.headers})
+      .post(this.commUrl, JSON.stringify({like: like, movie_id_forComm: movie_id_forComm}), {headers: this.headers})
       .toPromise()
       .then(comm => comm.json())
       .catch(this.handleError);

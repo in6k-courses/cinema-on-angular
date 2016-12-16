@@ -28,7 +28,7 @@ export class MovieComponent implements OnInit {
   }
 
   gotoDetail(movie: Movie): void {
-    this.router.navigate(['/details', movie.id]);
+    this.router.navigate(['/details', movie.movie_id]);
   }
 
   onSelect(movie: Movie): void {
@@ -53,7 +53,7 @@ export class MovieComponent implements OnInit {
 
   delete(movie: Movie): void {
     this.movieService
-      .delete(movie.id)
+      .delete(movie.movie_id)
       .then(() => {
         this.movies = this.movies.filter(h => h !== movie);
         if (this.selectedMovie === movie) {

@@ -3,6 +3,6 @@
   <li *ngFor="let comm of comms" (click)="onSelect(comm)"
       [class.selected]="comm === selectedComm">
     <span>{{comm.like}}</span>
-    <span>{{comm.movie.id}}</span>
+    <span>{{comm.movie.movie_id}}</span>
   </li>
 </ul>

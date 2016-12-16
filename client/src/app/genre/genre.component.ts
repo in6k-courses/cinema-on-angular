@@ -45,7 +45,7 @@ export class GenreComponent implements OnInit {
 
   delete(genre: Genre): void {
     this.genreService
-      .delete(genre.id)
+      .delete(genre.genre_id)
       .then(() => {
         this.genres = this.genres.filter(h => h !== genre);
         if (this.selectedGenre === genre) {

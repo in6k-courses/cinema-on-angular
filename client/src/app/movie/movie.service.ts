@@ -26,7 +26,7 @@ export class MovieService {
     //   .then(response => response.json() as Movie)
     //   .catch(this.handleError);
     return this.getMovies()
-      .then(movies => movies.find(movie => movie.id === id));
+      .then(movies => movies.find(movie => movie.movie_id === id));
   }
 
   private handleError(error: any): Promise<any> {

@@ -38,14 +38,14 @@ public class MovieDao {
 
     public Movie deleteMovie(Integer id) {
         Movie movie = (Movie) sessionFactory.getCurrentSession().createCriteria(Movie.class)
-            .add(eq("id", id)).uniqueResult();
+            .add(eq("movie_id", id)).uniqueResult();
         sessionFactory.getCurrentSession().delete(movie);
         return null;
     }
 
     public Movie getMovieById(Integer id) {
         Movie movie=(Movie) sessionFactory.getCurrentSession().createCriteria(Movie.class)
-                .add(eq("id",id))
+                .add(eq("movie_id",id))
                 .uniqueResult();
         movie.getComm().forEach(Comments::getLike);
         return movie;
