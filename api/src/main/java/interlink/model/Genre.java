@@ -1,6 +1,7 @@
 package interlink.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "genre")
@@ -16,6 +17,13 @@ public class Genre {
 
     @Column(name = "rating")
     Integer rating;
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name = "genre_movie", catalog = "cinema", joinColumns = {
+            @JoinColumn(name = "genre_id", nullable = false, updatable = false) },
+            inverseJoinColumns = { @JoinColumn(name = "movie_id",
+                    nullable = false, updatable = false) })
+    private List<Movie> movie;
 
     public Genre() {
     }

@@ -23,7 +23,7 @@ public class CommentsController {
 
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
-    Comments addNewComm(@RequestBody()Comments comments) {
+    Comments addNewComm(@RequestBody Comments comments) {
         return commentsService.addNewComm(comments);
     }
 }

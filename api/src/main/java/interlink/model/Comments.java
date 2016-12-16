@@ -17,7 +17,7 @@ public class Comments {
     Integer like;
 
     @Column(name = "movie_id_forComm")
-    Integer movie_id;
+    Integer movie_id_forComm;
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
@@ -27,9 +27,9 @@ public class Comments {
     public Comments() {
     }
 
-    public Comments(Integer like, Integer movie_id) {
+    public Comments(Integer like, Integer movie_id_forComm) {
         this.like = like;
-        this.movie_id = movie_id;
+        this.movie_id_forComm = movie_id_forComm;
     }
 
     public Integer getId() {
@@ -48,12 +48,12 @@ public class Comments {
         this.like = like;
     }
 
-    public Integer getMovie_id() {
-        return movie_id;
+    public Integer getMovie_id_forComm() {
+        return movie_id_forComm;
     }
 
-    public void setMovie_id(Integer movie_id) {
-        this.movie_id = movie_id;
+    public void setMovie_id_forComm(Integer movie_id_forComm) {
+        this.movie_id_forComm = movie_id_forComm;
     }
 
     public Movie getMovie() {

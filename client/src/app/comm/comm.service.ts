@@ -22,12 +22,10 @@ export class CommService {
   }
 
   private handleError(error: any): Promise<any> {
-    // console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
   }
 
   createComm(like: number, movie_id_forComm: number): Promise<Comment> {
-    // alert("" + like + "!" + movie_id + "!");
     return this.http
       .post(this.commUrl, JSON.stringify({like: like, movie_id_forComm: movie_id_forComm}), {headers: this.headers})
       .toPromise()

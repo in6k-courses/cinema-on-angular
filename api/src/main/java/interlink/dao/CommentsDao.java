@@ -27,8 +27,8 @@ public class CommentsDao {
         return commentses;
     }
 
-    public Comments addNewComm(Integer like, Integer movie_id) {
-        Comments comments = new Comments(like, movie_id);
+    public Comments addNewComm(Integer like, Integer movie_id_forComm) {
+        Comments comments = new Comments(like, movie_id_forComm);
         sessionFactory.getCurrentSession().save(comments);
         return comments;
     }

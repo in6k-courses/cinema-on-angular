@@ -20,6 +20,6 @@ public class CommentsService {
     }
 
     public Comments addNewComm(Comments comments) {
-        return commentsDao.addNewComm(comments.getLike(),comments.getMovie_id());
+        return commentsDao.addNewComm(comments.getLike(),comments.getMovie_id_forComm());
     }
 }

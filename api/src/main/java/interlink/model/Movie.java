@@ -10,7 +10,6 @@ public class Movie {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
     @Column(name = "movie_id", nullable = false)
     Integer movie_id;
 
