@@ -1,15 +1,11 @@
-<div class="col-md-0 col-md-offset-10">
-  <button type="submit" class="btn btn-info"
-          (click)="view(selectedView)">Add new Movie
-  </button>
-</div>
 <div>
   <ul class="nav nav-pills nav-stacked">
     <div class="container">
       <div class="row">
         <div class="panel panel-default" col-md-6 col-xs-2>
-          <div class="col-md-4 col-md-offset-5">Movies</div>
+          <!--&lt;!&ndash;&ndash;&gt;  <div class="col-md-4 col-md-offset-5">Movies</div>-->
           <table class="table table-striped" cursor>
+            <caption>Movies</caption>
             <tr>
               <td>
               </td>
@@ -45,6 +41,11 @@
     </div>
   </ul>
 </div>
+<!--<div class="col-md-0 col-md-offset-10">-->
+  <!--<button type="submit" class="btn btn-info"-->
+          <!--(click)="view(selectedView)">Add new Movie-->
+  <!--</button>-->
+<!--</div>-->
 <!--<div *ngIf="selectedMovie">-->
 <!--<h2>-->
 <!--{{selectedMovie.name | uppercase}} is my favorite movie-->
@@ -61,16 +62,18 @@
 
 <div *ngIf="selectedView">
   <div class="container">
-    <div class="row">
-      <div class="panel panel-default" col-md-6 col-xs-2>
-        <label>Name: </label> <input #name/><br>
-        <label>Description:</label> <input #description/><br>
-        <label>Duration:</label> <input #duration placeholder="120"/><br>
-        <button type="submit" class="btn btn-default" (click)="add(name.value,description.value,duration.value);
+    <!--<div class="row">-->
+      <form>
+        <div class="panel panel-default" col-md-6 col-xs-2>
+          <input #name type="text" class="form-control" placeholder="name"/><br>
+          <input #description type="text" class="form-control" placeholder="description"/><br>
+          <input #duration type="text" class="form-control" placeholder="120"/><br>
+        </div>
+        <button type="submit" class="btn btn-success" (click)="add(name.value,description.value,duration.value);
   name.value='';duration.value='';description.value=''">
           Add
         </button>
-      </div>
-    </div>
+      </form>
+    <!--</div>-->
   </div>
 </div>

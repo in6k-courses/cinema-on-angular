@@ -14,6 +14,8 @@ import {GenreService} from "./genre/genre.service";
 import { CommComponent } from './comm/comm.component';
 import {CommService} from "./comm/comm.service";
 import { DescrComponent } from './descr/descr.component';
+import { AddNewMovieComponent } from './add-new-movie/add-new-movie.component';
+import { AddNewGenreComponent } from './add-new-genre/add-new-genre.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { DescrComponent } from './descr/descr.component';
     MovieComponent,
     CommComponent,
     DescrComponent,
+    AddNewMovieComponent,
+    AddNewGenreComponent,
   ],
   imports: [
     BrowserModule,

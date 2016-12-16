@@ -1,15 +1,10 @@
-<div class="col-md-0 col-md-offset-10">
-  <button type="submit" class="btn btn-info"
-          (click)="view(selectedView)">Add new Genre
-  </button>
-</div>
 <div>
   <ul class="nav nav-pills nav-stacked">
     <div class="container">
       <div class="row">
-        <div class="panel panel-default" col-md-6 col-xs-2>
-          <div class="col-md-4 col-md-offset-5">Top Genres</div>
+        <div class="panel panel-default" col-md-8 col-xs-2>
           <table class="table table-striped" cursor>
+            <caption>Top Genres</caption>
             <tr>
               <td>
                 №
@@ -53,25 +48,3 @@
     </div>
   </ul>
 </div>
-<!--<button type="submit" class="btn btn-default" (click)="view(selectedView)">Add new Genre</button>-->
-
-<div *ngIf="selectedView">
-  <div class="container">
-    <div class="row">
-      <div class="panel panel-default" col-md-6 col-xs-2>
-        <h2>Add new Genre </h2>
-        <label>Name: </label> <input #name placeholder="Name of Genre"/><br>
-        <button type="submit" class="btn btn-default" (click)="add(name.value);name.value='';">
-          Add
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--<div *ngIf="selectedGenre">-->
-<!--<h2>-->
-<!--{{selectedGenre.name | uppercase}} have rating {{selectedGenre.rating}}-->
-<!--</h2>-->
-<!--<button (click)="gotoDetail()">View Films</button>-->
-<!--</div>-->
