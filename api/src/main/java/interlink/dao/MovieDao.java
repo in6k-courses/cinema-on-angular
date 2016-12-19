@@ -26,6 +26,7 @@ public class MovieDao {
         for(Movie movie:movies){
             movie.getName();
             movie.getComm().forEach(Comments::getLike);
+            //asdasdasdas
         }
         return movies;
     }
