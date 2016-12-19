@@ -10,8 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Repository
 @Transactional
+@Repository
 public class CommentsDao {
     @Autowired
     SessionFactory sessionFactory;
@@ -19,6 +19,17 @@ public class CommentsDao {
     public List<Comments> getAllComm() {
         Criteria criteria = sessionFactory.getCurrentSession().
                 createCriteria(Comments.class);
-        return (List<Comments>) criteria.list();
+        List<Comments> commentses = (List<Comments>) criteria.list();
+        for (Comments comments : commentses) {
+            comments.getLike();
+            comments.getMovie().getDescription();
+        }
+        return commentses;
+    }
+
+    public Comments addNewComm(Integer like, Integer movie_id_forComm) {
+        Comments comments = new Comments(like, movie_id_forComm);
+        sessionFactory.getCurrentSession().save(comments);
+        return comments;
     }
 }

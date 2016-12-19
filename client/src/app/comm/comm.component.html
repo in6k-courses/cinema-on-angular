@@ -1,0 +1,8 @@
+<h2>Top Comms</h2>
+<ul class="heroes">
+  <li *ngFor="let comm of comms" (click)="onSelect(comm)"
+      [class.selected]="comm === selectedComm">
+    <span>{{comm.like}}</span>
+    <span>{{comm.movie.movie_id}}</span>
+  </li>
+</ul>

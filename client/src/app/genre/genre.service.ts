@@ -7,7 +7,7 @@ import { Genre } from './genre';
 
 @Injectable()
 export class GenreService {
-  private genreUrl = '/api/genre/';
+  private genreUrl = '/api/genre';
   private headers = new Headers({'Content-Type': 'application/json'});
   constructor(private http: Http) { }
 
@@ -17,42 +17,32 @@ export class GenreService {
       .toPromise()
       .then(response => response.json() as Genre[])
       .catch(this.handleError);
-
   }
 
-  getGenre(genreId: number): Promise<Genre> {
+  getGenre(id: number): Promise<Genre> {
     return this.getGenres()
-      .then(genres => genres.find(genre => genre.id === genreId));
+      .then(genres => genres.find(genre => genre.genre_id === id));
   }
 
-  update(list: Genre): Promise<Genre> {
-    const url = `${this.genreUrl}/${list.id}`;
+  private handleError(error: any): Promise<any> {
+    // console.error('An error occurred', error); // for demo purposes only
+    return Promise.reject(error.message || error);
+  }
+
+  create(name: string) {
     return this.http
-      .put(url, list, {headers: this.headers})
+      .post(this.genreUrl, JSON.stringify({name:name}), {headers: this.headers})
       .toPromise()
-      .then(() => list)
+      .then(genre => genre.json())
       .catch(this.handleError);
   }
 
-  create(listName: string): Promise<Genre> {
+  delete(id: number) {
+    const url = `${this.genreUrl}/${id}`;
     return this.http
-      .put(this.genreUrl, JSON.stringify({listName: listName}), {headers: this.headers})
-      .toPromise()
-      .then(res => res.json())
-      .catch(this.handleError);
-  }
-
-  delete(idList: number): Promise<void> {
-    const url = `${this.genreUrl}/${idList}`;
-    return this.http.delete(url, {headers: this.headers})
+      .delete(url, {headers: this.headers})
       .toPromise()
       .then(() => null)
       .catch(this.handleError);
   }
-
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
-  }
-
 }

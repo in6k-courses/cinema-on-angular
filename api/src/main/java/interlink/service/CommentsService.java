@@ -6,6 +6,7 @@ import interlink.model.Comments;
 import interlink.model.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -16,5 +17,9 @@ public class CommentsService {
 
     public List<Comments> getAllComm(){
         return commentsDao.getAllComm();
+    }
+
+    public Comments addNewComm(Comments comments) {
+        return commentsDao.addNewComm(comments.getLike(),comments.getMovie_id_forComm());
     }
 }

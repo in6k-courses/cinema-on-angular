@@ -1,7 +1,5 @@
 package interlink.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,9 +9,9 @@ import java.util.List;
 public class Movie {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
-    Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "movie_id", nullable = false)
+    Integer movie_id;
 
     @Column(name = "name")
     String name;
@@ -24,29 +22,25 @@ public class Movie {
     @Column(name = "duration")
     Integer duration;
 
-    @Column(name = "comm_id")
-    Integer comm_id;
-
-    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "movie")
     private List<Comments> comm = new ArrayList();
 
+//    private List<Genre> genres = new ArrayList<>();
     public Movie() {
     }
 
-    public Movie(String name, String description, Integer duration, Integer comm_id) {
+    public Movie(String name, String description, Integer duration) {
         this.name = name;
         this.description = description;
         this.duration = duration;
-        this.comm_id = comm_id;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getMovie_id() {
+        return movie_id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setMovie_id(Integer movie_id) {
+        this.movie_id = movie_id;
     }
 
     public String getName() {
@@ -71,14 +65,6 @@ public class Movie {
 
     public void setDuration(Integer duration) {
         this.duration = duration;
-    }
-
-    public Integer getComm_id() {
-        return comm_id;
-    }
-
-    public void setComm_id(Integer comm_id) {
-        this.comm_id = comm_id;
     }
 
     public List<Comments> getComm() {

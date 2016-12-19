@@ -9,26 +9,27 @@ import javax.persistence.*;
 public class Comments {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     Integer id;
 
     @Column(name = "like")
     Integer like;
 
-    @Column(name = "movie_id")
-    Integer movie_id;
+    @Column(name = "movie_id_forComm")
+    Integer movie_id_forComm;
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "movie_id", insertable = false, updatable = false)
+    @JoinColumn(name = "movie_id_forComm", insertable = false, updatable = false)
     private Movie movie;
 
     public Comments() {
     }
 
-    public Comments(Integer like) {
+    public Comments(Integer like, Integer movie_id_forComm) {
         this.like = like;
+        this.movie_id_forComm = movie_id_forComm;
     }
 
     public Integer getId() {
@@ -47,12 +48,12 @@ public class Comments {
         this.like = like;
     }
 
-    public Integer getMovie_id() {
-        return movie_id;
+    public Integer getMovie_id_forComm() {
+        return movie_id_forComm;
     }
 
-    public void setMovie_id(Integer movie_id) {
-        this.movie_id = movie_id;
+    public void setMovie_id_forComm(Integer movie_id_forComm) {
+        this.movie_id_forComm = movie_id_forComm;
     }
 
     public Movie getMovie() {
