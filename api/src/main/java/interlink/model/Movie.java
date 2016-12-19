@@ -25,6 +25,7 @@ public class Movie {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "movie")
     private List<Comments> comm = new ArrayList();
 
+//    private List<Genre> genres = new ArrayList<>();
     public Movie() {
     }
 

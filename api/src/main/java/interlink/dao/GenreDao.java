@@ -23,7 +23,17 @@ public class GenreDao {
     public List<Genre> getAllGenre() {
         Criteria criteria = sessionFactory.getCurrentSession().
                 createCriteria(Genre.class).addOrder(Order.desc("rating"));
-        return (List<Genre>) criteria.list();
+        List<Genre> genreList = (List<Genre>) criteria.list();
+        for(Genre genre:genreList){
+            genre.getRating();
+            for (Movie movie:genre.getMovie()){
+                movie.getName();
+                for (Comments comments:movie.getComm()){
+                    comments.getLike();
+                }
+            }
+        }
+        return genreList;
     }
 
     public Genre addNewGenre(String name) {

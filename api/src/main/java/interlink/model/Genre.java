@@ -1,6 +1,7 @@
 package interlink.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -23,7 +24,7 @@ public class Genre {
             @JoinColumn(name = "genre_id", nullable = false, updatable = false) },
             inverseJoinColumns = { @JoinColumn(name = "movie_id",
                     nullable = false, updatable = false) })
-    private List<Movie> movie;
+    private List<Movie> movie = new ArrayList<>();
 
     public Genre() {
     }
@@ -61,4 +62,11 @@ public class Genre {
         this.name = name;
     }
 
+    public List<Movie> getMovie() {
+        return movie;
+    }
+
+    public void setMovie(List<Movie> movie) {
+        this.movie = movie;
+    }
 }
